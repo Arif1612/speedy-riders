@@ -47,12 +47,20 @@ const Navbar = () => {
             </Link>
           </ul>
         </div>
-        <img className=" ms-3 rounded-full" width="40px" height="34px" src={logo} alt="" />
+        <img
+          className=" ms-3 rounded-full"
+          width="50px"
+          height="34px"
+          src={logo}
+          alt=""
+        />
 
         <a className="btn btn-ghost normal-case text-xl">Speedy Rides</a>
       </div>
 
-      {/* nav lg screen */}
+      {/* start end  */}
+
+      {/* nav lg screen  (middle part) */}
       <div className="navbar-center hidden lg:flex">
         <Link className=" mr-3 " to="/home">
           Home
@@ -70,8 +78,10 @@ const Navbar = () => {
           Blogs
         </Link>
       </div>
+
+      {/* end part */}
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <button className="btn btn-active btn-secondary font-bold">Login</button>
       </div>
     </div>
   );

@@ -23,7 +23,7 @@ const Footer = () => {
         </p>
         <img
           className="rounded-full"
-          width="135"
+          width="100"
           height="40"
           src={logo}
           alt=""
