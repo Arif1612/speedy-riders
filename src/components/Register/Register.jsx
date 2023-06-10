@@ -89,7 +89,12 @@ const Register = () => {
                     className="input input-bordered"
                   />
                 </div>
-
+                {/* eroor message */}
+                {errorMessage && (
+                  <p className="text-red-700 text-xl font-bold mb-2">
+                    {errorMessage}
+                  </p>
+                )}
                 <label className="label">
                   <p className=" block text-red-700 font-semibold">
                     Already have an account?
