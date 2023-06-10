@@ -8,6 +8,7 @@ export default function ErrorPage() {
   return (
     <div id="error-page">
       <img src={img} className="w-full max-h-screen" alt="" />
+    
     </div>
   );
 }
