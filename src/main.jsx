@@ -5,12 +5,11 @@ import "./index.css";
 
 import MainLayout from "./Layout/MainLayout/MainLayout";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
-import Home from "./components/Home/Home/Home";
 import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
 import AuthProvide from "./providers/AuthProvide";
-
 import AddAToy from "./components/AddAToy/AddAToy";
+import Home from "./Home/Home/Home";
 
 const router = createBrowserRouter([
   {

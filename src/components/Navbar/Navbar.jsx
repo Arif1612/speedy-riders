@@ -39,7 +39,7 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-300 rounded-box w-52 text-black"
           >
-            <Link className=" mr-5 " to="/home">
+            <Link className=" mr-5 " to="/">
               Home
             </Link>
             <Link className=" mr-5 " to="/allToys">
@@ -70,29 +70,24 @@ const Navbar = () => {
 
       {/* nav lg screen  (middle part) */}
       <div className="navbar-center hidden lg:flex">
-        <Link className=" mr-3 " to="/home">
+        <Link className=" mr-3 " to="/">
           Home
         </Link>
         <Link className=" mr-3 " to="/allToys">
           All Toys
         </Link>
-        {
-          user && (
-            <Link className=" mr-3 " to="/myToys">
+        {user && (
+          <Link className=" mr-3 " to="/myToys">
             My Toys
           </Link>
-          )
-        }
+        )}
 
-        {
-          user && (
-            <Link className=" mr-3 " to="/addAToy">
+        {user && (
+          <Link className=" mr-3 " to="/addAToy">
             Add A Toy
           </Link>
-          )
-        }
-       
-      
+        )}
+
         <Link className=" mr-3 " to="/blogs">
           Blogs
         </Link>
@@ -126,7 +121,6 @@ const Navbar = () => {
           </Link>
         )}
       </div>
-     
     </div>
   );
 };
