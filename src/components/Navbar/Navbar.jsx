@@ -76,12 +76,23 @@ const Navbar = () => {
         <Link className=" mr-3 " to="/allToys">
           All Toys
         </Link>
-        <Link className=" mr-3 " to="/myToys">
-          My Toys
-        </Link>
-        <Link className=" mr-3 " to="/addAToy">
-          Add A Top
-        </Link>
+        {
+          user && (
+            <Link className=" mr-3 " to="/myToys">
+            My Toys
+          </Link>
+          )
+        }
+
+        {
+          user && (
+            <Link className=" mr-3 " to="/addAToy">
+            Add A Toy
+          </Link>
+          )
+        }
+       
+      
         <Link className=" mr-3 " to="/blogs">
           Blogs
         </Link>

@@ -10,6 +10,8 @@ import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
 import AuthProvide from "./providers/AuthProvide";
 
+import AddAToy from "./components/AddAToy/AddAToy";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
+      },
+      {
+        path: "/addAToy",
+        element: <AddAToy></AddAToy>,
       },
     ],
   },
