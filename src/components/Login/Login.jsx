@@ -4,7 +4,7 @@ import { AuthContext } from "../../providers/AuthProvide";
 import { toast } from "react-toastify";
 
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn, google } = useContext(AuthContext);
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -30,6 +30,25 @@ const Login = () => {
       .catch((error) => {
         console.log(error);
         setErrorMessage(error.message); // Display Firebase authentication error message
+      });
+  };
+
+  /****************************
+   * google sign in
+   * ******************** */
+
+  const handleGoogleSignIn = () => {
+    google()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        navigate("/");
+        toast("Congratulation Login Successfully");
+      })
+
+      .catch((error) => {
+        console.log(error);
+        setErrorMessage(error.message);
       });
   };
 
@@ -90,7 +109,12 @@ const Login = () => {
               <p className="text-center">Or</p>
 
               <div className="form-control mt-2">
-                <button className="btn btn-warning">Login With Google</button>
+                <button
+                  onClick={handleGoogleSignIn}
+                  className="btn btn-warning"
+                >
+                  Login With Google
+                </button>
               </div>
             </div>
           </div>

@@ -4,6 +4,7 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
   signInWithEmailAndPassword,
+  signInWithPopup,
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
 
@@ -26,9 +27,15 @@ const AuthProvide = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
+  // google
+  const google = () => {
+    return signInWithPopup(auth, provider);
+  };
+
   const authInfo = {
     createUser,
     signIn,
+    google,
   };
 
   return (
