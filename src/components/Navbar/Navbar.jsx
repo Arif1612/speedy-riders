@@ -42,7 +42,7 @@ const Navbar = () => {
             <Link className=" mr-5 " to="/addAToy">
               Add A Top
             </Link>
-            <Link className=" mr-5 " to="/blogs">
+            <Link className=" mr-2 " to="/blogs">
               Blogs
             </Link>
           </ul>
@@ -54,8 +54,8 @@ const Navbar = () => {
           src={logo}
           alt=""
         />
-
-        <a className="btn btn-ghost normal-case text-xl">Speedy Rides</a>
+        <h3 className="text-2xl font-bold ms-3">Speedy Riders</h3>
+     
       </div>
 
       {/* start end  */}
@@ -81,7 +81,9 @@ const Navbar = () => {
 
       {/* end part */}
       <div className="navbar-end">
-        <button className="btn btn-active btn-secondary font-bold">Login</button>
+        <button className="btn btn-active btn-secondary font-bold">
+          Login
+        </button>
       </div>
     </div>
   );
