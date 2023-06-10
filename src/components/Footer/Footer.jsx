@@ -21,7 +21,13 @@ const Footer = () => {
           <br />
           Md. Arif Ul Islam 2023
         </p>
-        <img width="135" height="40" src={logo} alt="" />
+        <img
+          className="rounded-full"
+          width="135"
+          height="40"
+          src={logo}
+          alt=""
+        />
       </div>
       <div>
         <span className="footer-title">Services</span>
