@@ -11,6 +11,7 @@ import AuthProvide from "./providers/AuthProvide";
 import AddAToy from "./components/AddAToy/AddAToy";
 import Home from "./Home/Home/Home";
 import Blogs from "./components/Blogs/Blogs";
+import SingleCarDetails from "./components/SingleCarDetails/SingleCarDetails";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,31 @@ const router = createBrowserRouter([
       {
         path: "/blogs",
         element: <Blogs></Blogs>,
+      },
+
+      {
+        path: "sports/:carId",
+        element: <SingleCarDetails></SingleCarDetails>,
+        loader: ({ params }) => {
+          console.log(params.carId); // Log the carId
+          return fetch(`http://localhost:5000/sports/${params.carId}`);
+        },
+      },
+      {
+        path: "regular/:carId",
+        element: <SingleCarDetails></SingleCarDetails>,
+        loader: ({ params }) => {
+          console.log(params.carId); // Log the carId
+          return fetch(`http://localhost:5000/regular/${params.carId}`);
+        },
+      },
+      {
+        path: "cars/:carId",
+        element: <SingleCarDetails></SingleCarDetails>,
+        loader: ({ params }) => {
+          console.log(params.carId); // Log the carId
+          return fetch(`http://localhost:5000/cars/${params.carId}`);
+        },
       },
     ],
   },

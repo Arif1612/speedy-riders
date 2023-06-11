@@ -41,7 +41,7 @@ const Login = () => {
     google()
       .then((result) => {
         const loggedUser = result.user;
-        console.log(loggedUser);
+        // console.log(loggedUser);
         navigate("/");
         toast("Congratulation Login Successfully");
       })

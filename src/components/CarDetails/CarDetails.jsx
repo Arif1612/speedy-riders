@@ -1,19 +1,17 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvide";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-const CarDetails = ({ sport }) => {
+const CarDetails = ({ sport, category }) => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
+  console.log(category);
 
   const { name, picture, price, rating, _id } = sport;
 
   const handleLogin = () => {
     if (user) {
-      // Show car details
-      alert("car details");
-      //   console.log("Car details:", sport);
     } else {
       toast("You have to log in first to view details");
       navigate("/login");
@@ -39,9 +37,11 @@ const CarDetails = ({ sport }) => {
             </div>
 
             <div className="card-actions">
-              <button onClick={handleLogin} className="btn btn-primary">
-                {user ? "Details" : "Login"}
-              </button>
+              <Link to={`/${category}/${_id}`}>
+                <button onClick={handleLogin} className="btn btn-primary">
+                  {user ? "Details" : "Login"}
+                </button>
+              </Link>
             </div>
           </div>
         </div>
