@@ -35,7 +35,7 @@ const Banner = () => {
           className="w-full"
         />
 
-        <div className="absolute flex  items-center h-full  left-0  top-0 bg-gradient-to-r from-[#521802] to-[rgba(21,21,21,0)]">
+        <div className="absolute flex  items-center h-full  left-0  top-0 bg-gradient-to-r from-[#6e1202] to-[rgba(21,21,21,0)]">
           <div className="text-white space-y-7 pl-12 w-1/2 ">
             <h2 className="text-2xl md:text-6xl font-bold">Sports Car</h2>
             <p>
@@ -54,7 +54,7 @@ const Banner = () => {
           </div>
         </div>
 
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+        <div className="absolute flex justify-between transform -translate-y-1/2 left-1/4 right-1/4 bottom-40">
           <a href="#slide4" className="btn btn-circle">
             ❮
           </a>
@@ -90,7 +90,7 @@ const Banner = () => {
           </div>
         </div>
 
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+        <div className="absolute flex justify-between transform -translate-y-1/2 left-1/4 right-1/4 bottom-40">
           <a href="#slide1" className="btn btn-circle">
             ❮
           </a>
@@ -128,7 +128,7 @@ const Banner = () => {
           </div>
         </div>
 
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+        <div className="absolute flex justify-between transform -translate-y-1/2 left-1/4 right-1/4 bottom-40">
           <a href="#slide2" className="btn btn-circle">
             ❮
           </a>
@@ -163,7 +163,7 @@ const Banner = () => {
             </div>
           </div>
         </div>
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+        <div className="absolute flex justify-between transform -translate-y-1/2 left-1/4 right-1/4 bottom-40">
           <a href="#slide3" className="btn btn-circle">
             ❮
           </a>
