@@ -109,7 +109,7 @@ const Banner = () => {
 
         <div className="absolute flex  items-center h-full  left-0  top-0 bg-gradient-to-r from-[#200202] to-[rgba(21,21,21,0)]">
           <div className="text-white space-y-7 pl-12 w-1/2 ">
-            <h2 className="text-2xl md:text-6xl font-bold">Mini Fire Track </h2>
+            <h2 className="text-2xl md:text-6xl font-bold">Mini Fire Truck </h2>
             <p>
               Experience the excitement of firefighting adventures with our mini
               fire track. With its realistic design and action-packed features,
