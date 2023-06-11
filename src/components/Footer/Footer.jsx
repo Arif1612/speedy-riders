@@ -3,7 +3,7 @@ import logo from "../../assets/logo1.png";
 
 const Footer = () => {
   return (
-    <footer className="footer p-10 bg-neutral text-neutral-content mt-10">
+    <footer className="footer p-20 bg-neutral text-neutral-content mt-10 ">
       <div>
         <svg
           width="50"

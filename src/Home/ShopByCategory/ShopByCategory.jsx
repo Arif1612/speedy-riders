@@ -36,21 +36,33 @@ const ShopByCategory = () => {
         <TabPanel>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mx-auto mb-5 mt-5">
             {sportsCar.map((sport) => (
-              <CarDetails key={sport._id} sport={sport} category="sports"></CarDetails>
+              <CarDetails
+                key={sport._id}
+                sport={sport}
+                category="sports"
+              ></CarDetails>
             ))}
           </div>
         </TabPanel>
         <TabPanel>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mx-auto mb-5 mt-5">
             {regularCar.map((sport) => (
-              <CarDetails key={sport._id} sport={sport} category="regular"></CarDetails>
+              <CarDetails
+                key={sport._id}
+                sport={sport}
+                category="regular"
+              ></CarDetails>
             ))}
           </div>
         </TabPanel>
         <TabPanel>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mx-auto mb-5 mt-5">
             {policeCar.map((sport) => (
-              <CarDetails key={sport._id} sport={sport} category="cars"></CarDetails>
+              <CarDetails
+                key={sport._id}
+                sport={sport}
+                category="cars"
+              ></CarDetails>
             ))}
           </div>
         </TabPanel>

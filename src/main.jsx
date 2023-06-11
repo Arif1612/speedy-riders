@@ -12,6 +12,7 @@ import AddAToy from "./components/AddAToy/AddAToy";
 import Home from "./Home/Home/Home";
 import Blogs from "./components/Blogs/Blogs";
 import SingleCarDetails from "./components/SingleCarDetails/SingleCarDetails";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -42,7 +43,11 @@ const router = createBrowserRouter([
 
       {
         path: "sports/:carId",
-        element: <SingleCarDetails></SingleCarDetails>,
+        element: (
+          <PrivateRoute>
+            <SingleCarDetails></SingleCarDetails>
+          </PrivateRoute>
+        ),
         loader: ({ params }) => {
           console.log(params.carId); // Log the carId
           return fetch(`http://localhost:5000/sports/${params.carId}`);
@@ -50,7 +55,11 @@ const router = createBrowserRouter([
       },
       {
         path: "regular/:carId",
-        element: <SingleCarDetails></SingleCarDetails>,
+        element: (
+          <PrivateRoute>
+            <SingleCarDetails></SingleCarDetails>
+          </PrivateRoute>
+        ),
         loader: ({ params }) => {
           console.log(params.carId); // Log the carId
           return fetch(`http://localhost:5000/regular/${params.carId}`);
@@ -58,7 +67,11 @@ const router = createBrowserRouter([
       },
       {
         path: "cars/:carId",
-        element: <SingleCarDetails></SingleCarDetails>,
+        element: (
+          <PrivateRoute>
+            <SingleCarDetails></SingleCarDetails>
+          </PrivateRoute>
+        ),
         loader: ({ params }) => {
           console.log(params.carId); // Log the carId
           return fetch(`http://localhost:5000/cars/${params.carId}`);

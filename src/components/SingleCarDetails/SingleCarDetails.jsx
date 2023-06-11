@@ -16,11 +16,11 @@ const SingleCarDetails = () => {
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row">
-        <div className="w-1/2 rounded-lg">
+        <div className=" md:w-1/2  rounded-lg">
           <img className="rounded-lg" src={picture} alt="" />
         </div>
 
-        <div className="w-1/2">
+        <div className="md:w-1/2">
           <h1 className="py-2 text-5xl font-bold">{name}</h1>
           <p className="py-2 text-xl font-semibold">Price: {price}</p>
           <p className="py-2 text-xl font-semibold">Rating: {rating}</p>

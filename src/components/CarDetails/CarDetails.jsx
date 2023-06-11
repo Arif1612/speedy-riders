@@ -6,12 +6,13 @@ import { toast } from "react-toastify";
 const CarDetails = ({ sport, category }) => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
-  console.log(category);
+  // console.log(category);
 
   const { name, picture, price, rating, _id } = sport;
 
   const handleLogin = () => {
     if (user) {
+      navigate(`/${category}/${_id}`);
     } else {
       toast("You have to log in first to view details");
       navigate("/login");
@@ -39,7 +40,7 @@ const CarDetails = ({ sport, category }) => {
             <div className="card-actions">
               <Link to={`/${category}/${_id}`}>
                 <button onClick={handleLogin} className="btn btn-primary">
-                  {user ? "Details" : "Login"}
+                  Details
                 </button>
               </Link>
             </div>
