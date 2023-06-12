@@ -5,21 +5,21 @@ import { AuthContext } from "../../providers/AuthProvide";
 const AllToys = () => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
-  const [toys, setToys] = useState([]);
+  const [bookings, setbookings] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/toys")
+    fetch("http://localhost:5000/bookings")
       .then((res) => res.json())
-      .then((data) => setToys(data));
+      .then((data) => setbookings(data));
   }, []);
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
   };
 
-  const filteredToys = toys.filter((toy) =>
-    toy.toyName.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredbookings = bookings.filter((booking) =>
+    booking.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const handleViewDetails = () => {
@@ -54,15 +54,15 @@ const AllToys = () => {
             </tr>
           </thead>
           <tbody>
-            {filteredToys.map((toy) => (
-              <tr key={toy.toyName}>
-                <td>{toy.seller}</td>
-                <td>{toy.toyName}</td>
-                <td>{toy.subCategory}</td>
-                <td>{toy.price}</td>
-                <td>{toy.availableQuantity}</td>
+            {filteredbookings.map((booking) => (
+              <tr key={booking._id}>
+                <td>{booking?.sellerName}</td>
+                <td>{booking.name}</td>
+                <td>{booking.subCategory}</td>
+                <td>{booking.price}</td>
+                <td>{booking.quantity}</td>
                 <td>
-                  <Link to={`/toys/${toy._id}`}>
+                  <Link to={`/bookings/${booking._id}`}>
                     <button
                       onClick={() => handleViewDetails()}
                       className="btn btn-outline btn-warning"

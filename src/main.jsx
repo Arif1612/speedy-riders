@@ -15,6 +15,7 @@ import SingleCarDetails from "./components/SingleCarDetails/SingleCarDetails";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import AllToys from "./components/AllToys/AllToys";
 import ToyDetails from "./components/ToyDetails/ToyDetails";
+import MyToys from "./components/MyToys/MyToys";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,14 @@ const router = createBrowserRouter([
       {
         path: "/addAToy",
         element: <AddAToy></AddAToy>,
+      },
+      {
+        path: "/myToys",
+        element: (
+          <PrivateRoute>
+            <MyToys></MyToys>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/blogs",

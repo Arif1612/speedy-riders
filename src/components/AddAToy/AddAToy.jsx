@@ -4,12 +4,56 @@ import { AuthContext } from "../../providers/AuthProvide";
 const AddAToy = () => {
   const { user } = useContext(AuthContext);
 
+  const handleAddAToy = (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+    const name = form.name.value;
+    const sellerName = form.sellerName.value;
+    const email = user?.email;
+    const subCategory = form.subCategory.value;
+    const pictureUrl = form.pictureUrl.value;
+    const price = form.price.value;
+    const rating = form.rating.value;
+    const quantity = form.quantity.value;
+    const description = form.description.value;
+
+    const booking = {
+      name,
+      sellerName,
+      email,
+      subCategory,
+      pictureUrl,
+      price,
+      rating,
+      quantity,
+      description,
+    };
+
+    console.log(booking);
+
+    fetch("http://localhost:5000/bookings", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(booking),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          alert("Toy Booking Done Successfully");
+        }
+      });
+  };
+
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
           {/* form start */}
-          <form onSubmit="">
+          <form onSubmit={handleAddAToy}>
             <div className="card flex-shrink-0 w-full max-w-5xl shadow-2xl bg-base-100">
               <div className="card-body">
                 {/* main */}
@@ -19,7 +63,7 @@ const AddAToy = () => {
                     {/* name */}
                     <div className="form-control">
                       <label className="label">
-                        <span className="label-text">Name</span>
+                        <span className="label-text">Toy Name</span>
                       </label>
                       <input
                         name="name"
@@ -37,7 +81,7 @@ const AddAToy = () => {
                       <input
                         name="sellerName"
                         type="text"
-                        value={user.displayName}
+                        defaultValue={user?.displayName}
                         placeholder="seller name"
                         className="input input-bordered"
                         required
@@ -51,7 +95,7 @@ const AddAToy = () => {
                       <input
                         name="email"
                         type="text"
-                        value={user.email} // Set the value from logged-in user's email
+                        defaultValue={user?.email} // Set the value from logged-in user's email
                         placeholder="email"
                         className="input input-bordered"
                         required
@@ -113,7 +157,7 @@ const AddAToy = () => {
                       <input
                         name="rating"
                         type="text"
-                        placeholder="rating"
+                        placeholder="rating (out of 5)"
                         className="input input-bordered"
                         required
                       />
