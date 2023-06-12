@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvide";
 
 const AddAToy = () => {
+  const { user } = useContext(AuthContext);
+
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
           {/* form start */}
           <form onSubmit="">
-            <div className="card flex-shrink-0 w-full max-w-2xl  shadow-2xl bg-base-100">
+            <div className="card flex-shrink-0 w-full max-w-5xl shadow-2xl bg-base-100">
               <div className="card-body">
                 {/* main */}
                 <div className="flex flex-col md:flex-row ">
@@ -34,6 +37,7 @@ const AddAToy = () => {
                       <input
                         name="sellerName"
                         type="text"
+                        value={user.displayName}
                         placeholder="seller name"
                         className="input input-bordered"
                         required
@@ -47,6 +51,7 @@ const AddAToy = () => {
                       <input
                         name="email"
                         type="text"
+                        value={user.email} // Set the value from logged-in user's email
                         placeholder="email"
                         className="input input-bordered"
                         required
@@ -95,7 +100,7 @@ const AddAToy = () => {
                       <input
                         name="price"
                         type="text"
-                        placeholder="pice"
+                        placeholder="price"
                         className="input input-bordered"
                         required
                       />
@@ -136,7 +141,12 @@ const AddAToy = () => {
                   <label className="label">
                     <span className="label-text">Description</span>
                   </label>
-                  <textarea className="textarea input input-bordered" name="description" placeholder="description" required></textarea>
+                  <textarea
+                    className="textarea input input-bordered"
+                    name="description"
+                    placeholder="description"
+                    required
+                  ></textarea>
                 </div>
                 <div className="form-control mt-6">
                   <button className="btn btn-primary">Submit</button>
