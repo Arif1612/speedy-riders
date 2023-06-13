@@ -9,17 +9,17 @@ const ShopByCategory = () => {
   const [policeCar, setPoliceCar] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/sports")
+    fetch("https://speedy-rides-server.vercel.app/sports")
       .then((res) => res.json())
       .then((data) => setSportsCar(data));
   });
   useEffect(() => {
-    fetch("http://localhost:5000/regular")
+    fetch("https://speedy-rides-server.vercel.app/regular")
       .then((res) => res.json())
       .then((data) => setRegularCar(data));
   });
   useEffect(() => {
-    fetch("http://localhost:5000/cars")
+    fetch("https://speedy-rides-server.vercel.app/cars")
       .then((res) => res.json())
       .then((data) => setPoliceCar(data));
   });

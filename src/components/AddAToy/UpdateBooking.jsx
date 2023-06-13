@@ -26,7 +26,7 @@ const UpdateBooking = () => {
 
     // console.log(booking);
 
-    fetch(`http://localhost:5000/bookings/${_id}`, {
+    fetch(`https://speedy-rides-server.vercel.app/bookings/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

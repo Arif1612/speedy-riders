@@ -56,7 +56,6 @@ const router = createBrowserRouter([
         path: "/blogs",
         element: <Blogs></Blogs>,
       },
-      // aitai kaj
       {
         path: "/bookings/:toyId",
         element: (
@@ -65,14 +64,16 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/bookings/${params.toyId}`),
+          fetch(
+            `https://speedy-rides-server.vercel.app/bookings/${params.toyId}`
+          ),
       },
 
       {
         path: "/updateBooking/:id",
         element: <UpdateBooking></UpdateBooking>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/bookings/${params.id}`),
+          fetch(`https://speedy-rides-server.vercel.app/bookings/${params.id}`),
       },
 
       {
@@ -84,7 +85,9 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) => {
           console.log(params.carId); // Log the carId
-          return fetch(`http://localhost:5000/sports/${params.carId}`);
+          return fetch(
+            `https://speedy-rides-server.vercel.app/sports/${params.carId}`
+          );
         },
       },
       {
@@ -96,7 +99,9 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) => {
           console.log(params.carId); // Log the carId
-          return fetch(`http://localhost:5000/regular/${params.carId}`);
+          return fetch(
+            `https://speedy-rides-server.vercel.app/regular/${params.carId}`
+          );
         },
       },
       {
@@ -108,7 +113,9 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) => {
           console.log(params.carId); // Log the carId
-          return fetch(`http://localhost:5000/cars/${params.carId}`);
+          return fetch(
+            `https://speedy-rides-server.vercel.app/cars/${params.carId}`
+          );
         },
       },
     ],

@@ -5,22 +5,28 @@ import { AuthContext } from "../../providers/AuthProvide";
 const AllToys = () => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
-  const [bookings, setBookings] = useState([]);
+  const [bookings, setbookings] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/bookings?limit=20`)
+    fetch("https://speedy-rides-server.vercel.app/bookings")
       .then((res) => res.json())
-      .then((data) => setBookings(data));
+      .then((data) => setbookings(data));
   }, []);
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
   };
 
-  const filteredbookings = bookings.filter((booking) =>
-    booking.name.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredbookings = bookings.filter(
+    (booking) =>
+      booking.name &&
+      booking.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  // const filteredbookings = bookings.filter((booking) =>
+  //   booking.name.toLowerCase().includes(searchTerm.toLowerCase())
+  // );
 
   const handleViewDetails = () => {
     if (user) {

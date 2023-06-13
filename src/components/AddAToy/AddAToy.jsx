@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const AddAToy = () => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
-  
+
   const handleAddAToy = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -33,7 +33,7 @@ const AddAToy = () => {
 
     console.log(booking);
 
-    fetch("http://localhost:5000/bookings", {
+    fetch("https://speedy-rides-server.vercel.app/bookings", {
       method: "POST",
       headers: {
         "content-type": "application/json",
