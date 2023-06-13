@@ -65,7 +65,7 @@ const AllToys = () => {
                   <Link to={`/bookings/${booking._id}`}>
                     <button
                       onClick={() => handleViewDetails()}
-                      className="btn btn-outline btn-warning"
+                      className="btn btn-outline btn-accent"
                     >
                       View Details
                     </button>

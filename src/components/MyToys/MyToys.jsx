@@ -33,37 +33,15 @@ const MyToys = () => {
     }
   };
 
-  // handle confirm
-  const handleBookingConfirm = (id) => {
-    fetch(`http://localhost:5000/bookings/${id}`, {
-      method: "PATCH",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({ status: "confirm" }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.modifiedCount > 0) {
-          const remaining = bookings.filter((bookings) => bookings._id !== id);
-          const updated = bookings.find((booking) => booking._id === id);
-          updated.status = "confirm";
-          const newBookings = [updated, ...remaining];
-          setBookings(newBookings);
-        }
-      });
-  };
+  // console.log(bookings);
 
-  //   console.log(bookings);
-
-  const handleViewDetails = () => {
-    if (user) {
-      navigate(`/toys/${toy._id}`);
-    } else {
-      navigate(`/login`);
-    }
-  };
+  // const handleViewDetails = (id) => {
+  //   if (user) {
+  //     navigate(`/toys/${toy._id}`);
+  //   } else {
+  //     navigate(`/login`);
+  //   }
+  // };
 
   return (
     <div>
@@ -112,12 +90,11 @@ const MyToys = () => {
                   </td>
 
                   <td>
-                    <button
-                      onClick={() => handleBookingConfirm(booking._id)}
-                      className="btn btn-outline btn-warning"
-                    >
-                      Update
-                    </button>
+                    <Link to={`/updateBooking/${booking._id}`}>
+                      <button className="btn btn-outline btn-warning">
+                        Edit
+                      </button>
+                    </Link>
                   </td>
                 </tr>
               ))}

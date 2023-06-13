@@ -16,6 +16,7 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import AllToys from "./components/AllToys/AllToys";
 import ToyDetails from "./components/ToyDetails/ToyDetails";
 import MyToys from "./components/MyToys/MyToys";
+import UpdateBooking from "./components/AddAToy/UpdateBooking";
 
 const router = createBrowserRouter([
   {
@@ -56,14 +57,25 @@ const router = createBrowserRouter([
         element: <Blogs></Blogs>,
       },
       {
-        path: "bookings/:toyId",
-        element: <ToyDetails></ToyDetails>,
+        path: "/bookings/:toyId",
+        element: (
+          <PrivateRoute>
+            <ToyDetails></ToyDetails>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/bookings/${params.toyId}`),
       },
 
       {
-        path: "sports/:carId",
+        path: "/updateBooking/:id",
+        element: <UpdateBooking></UpdateBooking>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/bookings/${params.id}`),
+      },
+
+      {
+        path: "/sports/:carId",
         element: (
           <PrivateRoute>
             <SingleCarDetails></SingleCarDetails>
@@ -75,7 +87,7 @@ const router = createBrowserRouter([
         },
       },
       {
-        path: "regular/:carId",
+        path: "/regular/:carId",
         element: (
           <PrivateRoute>
             <SingleCarDetails></SingleCarDetails>
@@ -87,7 +99,7 @@ const router = createBrowserRouter([
         },
       },
       {
-        path: "cars/:carId",
+        path: "/cars/:carId",
         element: (
           <PrivateRoute>
             <SingleCarDetails></SingleCarDetails>
