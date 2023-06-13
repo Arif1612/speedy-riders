@@ -59,7 +59,7 @@ const AllToys = () => {
                 <td>{booking?.sellerName}</td>
                 <td>{booking.name}</td>
                 <td>{booking.subCategory}</td>
-                <td>{booking.price}</td>
+                <td>{'$'+ booking.price}</td>
                 <td>{booking.quantity}</td>
                 <td>
                   <Link to={`/bookings/${booking._id}`}>

@@ -14,6 +14,8 @@ const MyToys = () => {
       .then((data) => setBookings(data));
   }, [url]);
 
+  console.log(bookings);
+
   // handle delete
   const handleDelete = (id) => {
     const proceed = confirm("Are you sure you want to delete");
@@ -46,7 +48,6 @@ const MyToys = () => {
   return (
     <div>
       <div className="w-full  ">
-        <p>{bookings.length}</p>
         <div className="overflow-x-auto">
           <table className="table">
             <thead>

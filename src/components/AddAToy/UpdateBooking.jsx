@@ -1,9 +1,10 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 const UpdateBooking = () => {
   const toys = useLoaderData();
-  const { price, quantity, description,_id } = toys;
+  const { price, quantity, description, _id } = toys;
+  const navigate = useNavigate();
 
   console.log(toys);
 
@@ -35,8 +36,9 @@ const UpdateBooking = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.modifiedCount>0) {
+        if (data.modifiedCount > 0) {
           alert("Toy Booking Updated Successfully");
+          navigate("/myToys");
         }
       });
   };

@@ -40,7 +40,7 @@ const CarDetails = ({ sport, category }) => {
             <div className="card-actions">
               <Link to={`/${category}/${_id}`}>
                 <button onClick={handleLogin} className="btn btn-primary">
-                  Details
+                 View Details
                 </button>
               </Link>
             </div>

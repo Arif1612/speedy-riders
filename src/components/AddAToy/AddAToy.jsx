@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvide";
+import { useNavigate } from "react-router-dom";
 
 const AddAToy = () => {
   const { user } = useContext(AuthContext);
-
+  const navigate = useNavigate();
+  
   const handleAddAToy = (event) => {
     event.preventDefault();
-
     const form = event.target;
     const name = form.name.value;
     const sellerName = form.sellerName.value;
@@ -44,6 +45,7 @@ const AddAToy = () => {
         console.log(data);
         if (data.insertedId) {
           alert("Toy Booking Done Successfully");
+          navigate("/allToys");
         }
       });
   };
