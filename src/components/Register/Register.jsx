@@ -1,12 +1,17 @@
 import React, { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvide";
 import { toast } from "react-toastify";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
   const [errorMessage, setErrorMessage] = useState("");
+
+  console.log(location);
+  // location redirect
+  const from = location.state?.from?.pathname || "/";
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -21,7 +26,8 @@ const Register = () => {
         const createdUser = result.user;
         console.log(createdUser);
         toast("Congratulations Register Successfully");
-        navigate("/");
+        // navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         const errorMessage = error.message;

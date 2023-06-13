@@ -29,9 +29,8 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-       
         path: "/register",
-        element:<Register></Register>,
+        element: <Register></Register>,
       },
       {
         path: "/login",
@@ -57,6 +56,7 @@ const router = createBrowserRouter([
         path: "/blogs",
         element: <Blogs></Blogs>,
       },
+      // aitai kaj
       {
         path: "/bookings/:toyId",
         element: (

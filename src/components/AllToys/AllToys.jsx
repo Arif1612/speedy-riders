@@ -5,13 +5,13 @@ import { AuthContext } from "../../providers/AuthProvide";
 const AllToys = () => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
-  const [bookings, setbookings] = useState([]);
+  const [bookings, setBookings] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/bookings")
+    fetch(`http://localhost:5000/bookings?limit=20`)
       .then((res) => res.json())
-      .then((data) => setbookings(data));
+      .then((data) => setBookings(data));
   }, []);
 
   const handleSearch = (e) => {
@@ -59,7 +59,7 @@ const AllToys = () => {
                 <td>{booking?.sellerName}</td>
                 <td>{booking.name}</td>
                 <td>{booking.subCategory}</td>
-                <td>{'$'+ booking.price}</td>
+                <td>{"$" + booking.price}</td>
                 <td>{booking.quantity}</td>
                 <td>
                   <Link to={`/bookings/${booking._id}`}>

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvide";
 import { toast } from "react-toastify";
 
@@ -7,6 +7,12 @@ const Login = () => {
   const { signIn, google } = useContext(AuthContext);
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState("");
+  const location = useLocation();
+  console.log(location);
+
+  // location redirect
+  const from = location.state?.from?.pathname || "/";
+
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -19,12 +25,15 @@ const Login = () => {
       return;
     }
 
+    // sign in ar vitore navigate ta dite hobe  location ar 
+
     signIn(email, password)
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
-        // Navigate to "/" after successful login
-        navigate("/");
+        // Navigate to the route where it come from the private route after successful login
+        // navigate("/");
+        navigate(from,{replace:true});
         toast("Congratulation Login Successfully");
       })
       .catch((error) => {
@@ -42,7 +51,8 @@ const Login = () => {
       .then((result) => {
         const loggedUser = result.user;
         // console.log(loggedUser);
-        navigate("/");
+        // navigate("/");
+        navigate(from,{replace:true});
         toast("Congratulation Login Successfully");
       })
 

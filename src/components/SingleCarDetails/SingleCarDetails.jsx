@@ -3,7 +3,6 @@ import { useLoaderData } from "react-router-dom";
 
 const SingleCarDetails = () => {
   const car = useLoaderData();
-  
 
   if (!car) {
     return <p>Loading...</p>; // Render a loading state while data is being fetched
