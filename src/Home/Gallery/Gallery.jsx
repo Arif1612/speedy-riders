@@ -2,7 +2,7 @@ import React from "react";
 
 const Gallery = () => {
   return (
-    <div className="grid gap-4 lg:grid-cols-3  md:grid-cols-2 grid-cols-1">
+    <div className="grid gap-4 mx-5 lg:grid-cols-3  md:grid-cols-2 grid-cols-1 ">
       <div>
         <img
           className="rounded-xl"

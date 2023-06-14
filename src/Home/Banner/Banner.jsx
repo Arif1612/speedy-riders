@@ -37,7 +37,7 @@ const Banner = () => {
 
         <div className="absolute flex  items-center h-full  left-0  top-0 bg-gradient-to-r from-[#6e1202] to-[rgba(21,21,21,0)]">
           <div className="text-white space-y-7 pl-12 w-1/2 ">
-            <h2 className="text-2xl md:text-6xl font-bold">Sports Car</h2>
+            <h2 className="text-xl md:text-6xl font-bold">Sports Car</h2>
             <p>
               Experience the thrill of speed and competition with our collection
               of sports toy cars. From sleek race cars to off-road adventurers,
@@ -54,7 +54,7 @@ const Banner = () => {
           </div>
         </div>
 
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-1/4 right-1/4 bottom-40">
+        <div className=" absolute flex justify-between transform -translate-y-1/2 left-1/4 right-1/4 bottom-32 ">
           <a href="#slide4" className="btn btn-circle">
             ❮
           </a>
@@ -73,7 +73,7 @@ const Banner = () => {
 
         <div className="absolute flex items-center h-full  left-0  top-0 bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)]">
           <div className="text-white space-y-7 pl-12 w-1/2 ">
-            <h2 className="text-2xl md:text-6xl font-bold">Truck</h2>
+            <h2 className="text-xl md:text-6xl font-bold">Truck</h2>
             <p>
               Unleash the excitement of racing with our track toy collection.
               From twisting loops to high-speed straightaways, our track toys
@@ -90,7 +90,7 @@ const Banner = () => {
           </div>
         </div>
 
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-1/4 right-1/4 bottom-40">
+        <div className="absolute flex justify-between transform -translate-y-1/2 left-1/4 right-1/4 bottom-32 ">
           <a href="#slide1" className="btn btn-circle">
             ❮
           </a>
@@ -109,7 +109,7 @@ const Banner = () => {
 
         <div className="absolute flex  items-center h-full  left-0  top-0 bg-gradient-to-r from-[#200202] to-[rgba(21,21,21,0)]">
           <div className="text-white space-y-7 pl-12 w-1/2 ">
-            <h2 className="text-2xl md:text-6xl font-bold">Mini Fire Truck </h2>
+            <h2 className="text-xl md:text-6xl font-bold">Mini Fire Truck </h2>
             <p>
               Experience the excitement of firefighting adventures with our mini
               fire track. With its realistic design and action-packed features,
@@ -128,7 +128,7 @@ const Banner = () => {
           </div>
         </div>
 
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-1/4 right-1/4 bottom-40">
+        <div className="absolute flex justify-between transform -translate-y-1/2 left-1/4 right-1/4 bottom-32 ">
           <a href="#slide2" className="btn btn-circle">
             ❮
           </a>
@@ -146,7 +146,7 @@ const Banner = () => {
 
         <div className="absolute flex items-center h-full  left-0  top-0 bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)]">
           <div className="text-white space-y-7 pl-12 w-1/2 ">
-            <h2 className="text-2xl md:text-6xl font-bold">Police Car</h2>
+            <h2 className="text-xl md:text-6xl font-bold">Police Car</h2>
             <p>
               Join the law enforcement and embark on thrilling adventures with
               our police car toy. With its sleek design, flashing lights, and
@@ -163,7 +163,7 @@ const Banner = () => {
             </div>
           </div>
         </div>
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-1/4 right-1/4 bottom-40">
+        <div className="absolute flex justify-between transform -translate-y-1/2 left-1/4 right-1/4 bottom-32 ">
           <a href="#slide3" className="btn btn-circle">
             ❮
           </a>

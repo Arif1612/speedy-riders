@@ -3,7 +3,7 @@ import Marquee from "react-fast-marquee";
 
 const OurProfessionals = () => {
   return (
-    <div>
+    <div className="mx-5">
           <Marquee speed={70}>
               {/* 1 */}
         <div className="card w-96 bg-base-100 shadow-xl">

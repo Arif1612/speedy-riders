@@ -12,7 +12,7 @@ const Home = () => {
       <h2 className="text-3xl font-bold text-center mt-5 mb-12">Car Gallery</h2>
       <Gallery></Gallery>
       <h2 className="text-3xl font-bold text-center mt-16 mb-12">
-        Shop By Category{" "}
+        Shop By Category
       </h2>
       <ShopByCategory></ShopByCategory>
       <h2 className="text-3xl font-bold text-center mt-16 mb-12">
