@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvide";
 import { Link, useNavigate } from "react-router-dom";
+import Container from "../../Container";
 
 const MyToys = () => {
   const navigate = useNavigate();
@@ -46,7 +47,9 @@ const MyToys = () => {
   // };
 
   return (
-    <div>
+   <div className="flex justify-center items-center overflow-x-auto m-6 ">
+     <Container>
+      <div>
       <div className="w-full  ">
         <div className="overflow-x-auto">
           <table className="table">
@@ -104,6 +107,8 @@ const MyToys = () => {
         </div>
       </div>
     </div>
+    </Container>
+   </div>
   );
 };
 

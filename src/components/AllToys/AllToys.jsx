@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvide";
+import Container from "../../Container";
 
 const AllToys = () => {
   const { user } = useContext(AuthContext);
@@ -37,7 +38,9 @@ const AllToys = () => {
   };
 
   return (
-    <div className="w-full  ">
+     <div className="flex justify-center items-center overflow-x-auto m-6 " >
+          <Container >
+       <div className="w-full  ">
       <div className="mb-4 mt-5 ">
         <input
           type="text"
@@ -47,7 +50,7 @@ const AllToys = () => {
           className="input input-ghost w-full max-w-xs input-bordered"
         />
       </div>
-      <div className="overflow-x-auto">
+      <div className="">
         <table className="table">
           <thead>
             <tr>
@@ -83,6 +86,8 @@ const AllToys = () => {
         </table>
       </div>
     </div>
+     </Container>
+     </div>
   );
 };
 

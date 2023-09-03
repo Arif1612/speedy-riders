@@ -1,8 +1,11 @@
 import React from "react";
+import Container from "../../Container";
 
 const Blogs = () => {
   return (
-    <div>
+<div className=" flex justify-center items-center ">
+<Container > 
+     <div>
       <h2 className="text-xl font-bold me-3 text-blue-500 mt-5">
         Q1. What is an access token and refresh token? How do they work and
         where should we store them on the client-side?
@@ -125,6 +128,8 @@ const Blogs = () => {
         powerful data manipulation and analysis capabilities in MongoDB.
       </p>
     </div>
+   </Container>
+</div>
   );
 };
 

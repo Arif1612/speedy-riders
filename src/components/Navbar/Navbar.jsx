@@ -13,7 +13,7 @@ const Navbar = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <div className="navbar  bg-neutral text-white">
+    <div className="navbar  bg-neutral text-white  ">
       <div className="navbar-start">
         <div className="dropdown">
           <label
@@ -37,9 +37,9 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm flex flex-row dropdown-content  p-2 shadow bg-base-300 rounded-box w-60 text-center text-black absolute top-0"
+            className="menu menu-sm flex flex-col dropdown-content  p-2  shadow bg-base-300 rounded-box w-60 text-center text-black absolute top-0 z-10 font-semibold"
           >
-            <Link className=" mr-5 " to="/">
+            <Link className=" mr-5  " to="/">
               Home
             </Link>
             <Link className=" mr-5 " to="/allToys">
@@ -55,8 +55,13 @@ const Navbar = () => {
               Blogs
             </Link>
           </ul>
+
+        
         </div>
-        <img
+
+        <Link to="/">
+              <div className="flex justify-center items-center ml-6">
+              <img
           className=" ms-3 rounded-full"
           width="50px"
           height="34px"
@@ -64,37 +69,40 @@ const Navbar = () => {
           alt=""
         />
         <h3 className="text-2xl font-bold ms-3">Speedy Riders</h3>
+              </div>
+          </Link>
+       
       </div>
 
       {/* start end  */}
 
       {/* nav lg screen  (middle part) */}
-      <div className="navbar-center hidden lg:flex">
-        <Link className=" mr-3 " to="/">
+      <div className="navbar-center hidden lg:flex ">
+        <Link className=" mr-3 hover:bg-white hover:text-black p-3 hover:text-xl rounded " to="/">
           Home
         </Link>
-        <Link className=" mr-3 " to="/allToys">
+        <Link className=" mr-3 hover:bg-white hover:text-black p-3 hover:text-xl rounded " to="/allToys">
           All Toys
         </Link>
         {user && (
-          <Link className=" mr-3 " to="/myToys">
+          <Link className=" mr-3 hover:bg-white hover:text-black p-3 hover:text-xl rounded " to="/myToys">
             My Toys
           </Link>
         )}
 
         {user && (
-          <Link className=" mr-3 " to="/addAToy">
+          <Link className=" mr-3 hover:bg-white hover:text-black p-3 hover:text-xl rounded " to="/addAToy">
             Add A Toy
           </Link>
         )}
 
-        <Link className=" mr-3 " to="/blogs">
+        <Link className=" mr-3 hover:bg-white hover:text-black p-3 hover:text-xl rounded " to="/blogs">
           Blogs
         </Link>
       </div>
       {/* end */}
 
-      <div className="navbar-end">
+      <div className="navbar-end mr-6">
         {user && (
           <>
             <span className="mr-4 ">
