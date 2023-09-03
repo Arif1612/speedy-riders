@@ -6,6 +6,8 @@ import Brands from "../Brands/Brands";
 import OurProfessionals from "../OurProfessionals/OurProfessionals";
 import Container from "../../Container";
 import Questions from "../Questions/Questions";
+import SpecialOffers from "../SpecialOffers/SpecialOffers";
+import ChooseUs from "../ChooseUs/ChooseUs";
 
 const Home = () => {
   return (
@@ -29,13 +31,20 @@ const Home = () => {
           <h2 className="text-3xl font-bold text-center mt-16 mb-12">
             Our Professionals
           </h2>
-      
-
           <OurProfessionals></OurProfessionals>
+          <h2 className="text-3xl font-bold text-center mt-16 mb-12">
+            Special Offers
+          </h2>
+          <SpecialOffers></SpecialOffers>
           <h2 className="text-3xl font-bold text-center mt-16 mb-12">
             Our Partners
           </h2>
           <Brands></Brands>
+
+          <h2 className="text-3xl font-bold text-center mt-16 mb-12">
+            Why Choose Us?
+          </h2>
+          <ChooseUs></ChooseUs>
           
         </Container>
       </div>
